@@ -1,0 +1,15 @@
+{
+  "name": "javascript_operations",
+  "version": "1.0.0",
+  "description": "Project for testing javascript operations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aldocesarmg",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  },
+  "type": "module"
+}
