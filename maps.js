@@ -5,7 +5,7 @@ let keepMenuOpen = true;
 
 export default async function MapFunctionsMenu() {
     console.log(`This is a shopping list`);
-    console.log(`Please choose the option: \n 1. Add new element \n 2. Show elements \n 3. Delete an element \n 4. Check if element exists \n 5. Get number of elements in the list \n 6. Get specific element from the map \n 7. Clear the list`);
+    console.log(`Please choose the option: \n 1. Add new element \n 2. Show elements \n 3. Delete an element \n 4. Check if element exists \n 5. Get number of elements in the list \n 6. Get quantity of a specific element from the map \n 7. Clear the list`);
 
     do{
         await askInput([{
@@ -60,13 +60,20 @@ async function addElementToMap(selection) {
             await askInput(checkQuestion, answer => shoppingListMap.has(answer.checkElement) ? console.log('Element exists') : console.log('Element does not exist'));
             break;
         case '5':
-            
+            console.log(shoppingListMap.size);
             break;
         case '6':
-            
+            let getQuestion = [
+                {
+                    type: 'input',
+                    name: 'getElement',
+                    message: 'Please introduce the element to get: '
+                }
+            ]
+            await askInput(getQuestion, answer => console.log(shoppingListMap.get(answer.getElement)));
             break;
         case '7':
-            
+            shoppingListMap.clear();
             break;
         default:
             console.log(`Not an option.`);
